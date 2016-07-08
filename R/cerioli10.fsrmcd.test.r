@@ -7,7 +7,9 @@ cerioli2010.fsrmcd.test <-
 # 2011-06-23
 #
 function( datamat, mcd.alpha=max.bdp.mcd.alpha(n,v), 
-  signif.alpha=0.05, nsamp = 500, nmini = 300, trace=FALSE ) 
+  signif.alpha=0.05, nsamp = 500, nmini = 300, trace=FALSE,
+  delta = 0.025, hrdf.method=c("GM14","HR05")
+  ) 
 {
 
   datamat <- as.matrix(datamat)
@@ -15,6 +17,8 @@ function( datamat, mcd.alpha=max.bdp.mcd.alpha(n,v),
     stop("datamat cannot have missing values.")
   n <- nrow(datamat) # number of observations
   v <- ncol(datamat) # dimension
+
+  hrdf.method <- match.arg( hrdf.method )
 
   # step 1: compute h, compute MCD location/dispersion
   # estimate using the constants defined in Cerioli (2010)
@@ -55,11 +59,12 @@ function( datamat, mcd.alpha=max.bdp.mcd.alpha(n,v),
   # and delta = 0.025.
   mahdist  <- mahalanobis( datamat, center=mu.hat, cov=sigma.hat )
   n.sigalf <- length(signif.alpha)
-  hr05     <- hr05CutoffMvnormal( n, v, mcd.alpha, 0.025 )
+  hr05     <- hr05CutoffMvnormal( n, v, mcd.alpha, delta, 
+    method=hrdf.method )
 
   dfz      <- hr05$m.pred - v + 1
   DD       <- withCallingHandlers(
-    { hr05$m.pred * v * qf(0.975, df1=v, df2=dfz)/dfz },
+    { hr05$m.pred * v * qf( 1. - delta, df1=v, df2=dfz)/dfz },
     warning = function(w) { 
       cat("cerioli10.fsrmcd.test: qf warns about df1 = ", v," df2 = ",dfz,"\n") 
       w 
@@ -68,7 +73,7 @@ function( datamat, mcd.alpha=max.bdp.mcd.alpha(n,v),
   )
 
   if ( trace ) cat("In cerioli2010.fsrmcd.test: m.pred ", hr05$m.pred, " v ", 
-    v, " dfz ", dfz, " qf ", qf(0.975, v, dfz), "\n")
+    v, " dfz ", dfz, " qf ", qf( 1. - delta, v, dfz), "\n")
 
   weights <- as.integer(mahdist <= DD)
 
@@ -79,7 +84,7 @@ function( datamat, mcd.alpha=max.bdp.mcd.alpha(n,v),
   mu.hat.rw    <- colMeans(mcd.data)
   mcd.data     <- sweep(mcd.data, 2, mu.hat.rw, check.margin=TRUE)
   sigma.hat.rw <- crossprod(mcd.data)
-  krmcd        <- robustbase::.MCDcons(v, 0.975)
+  krmcd        <- robustbase::.MCDcons(v, 1. - delta)
   sigma.hat.rw <- krmcd * sigma.hat.rw / ( m - 1 )
 
   # step 4: compute squared reweighted distances and test using Beta or F
