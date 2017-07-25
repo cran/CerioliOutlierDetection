@@ -56,11 +56,11 @@
 \references{
 C. G. Green and R. Douglas Martin. An extension of a method of Hardin and Rocke, with
 an application to multivariate outlier detection via the IRMCD method of Cerioli.
-Working Paper, 2014. Available from 
-\url{http://students.washington.edu/cggreen/uwstat/papers/cerioli_extension.pdf}
+Working Paper, 2017. Available from 
+\url{http://christopherggreen.github.io/papers/hr05_extension.pdf}
 
 J. Hardin and D. M. Rocke. The distribution of robust distances. Journal of Computational
-and Graphical Statistics, 14:928-946, 2005.
+and Graphical Statistics, 14:928-946, 2005. \doi{10.1198/106186005X77685}
 }
 \author{
 Written and maintained by Christopher G. Green <christopher.g.green@gmail.com>
