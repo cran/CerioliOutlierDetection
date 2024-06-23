@@ -8,7 +8,7 @@
   Mahalanobis distances calculated with the minimum covariance 
   determinant (MCD) robust dispersion estimate (for data with 
   a model normal distribution) as described in Hardin and 
-  Rocke (2005) or in Green and Martin (2014).
+  Rocke (2005) or in Green and Martin (2017).
 }
 \usage{
 hr05AdjustedDF( n.obs, p.dim, mcd.alpha, m.asy, method = c("HR05", "GM14"))
@@ -26,7 +26,7 @@ hr05AdjustedDF( n.obs, p.dim, mcd.alpha, m.asy, method = c("HR05", "GM14"))
 	obtain the the finite-sample asymptotic value, but the user can also 
 	provide a pre-computed value.}
   \item{method}{Either "HR05" to use the method of Hardin and Rocke (2005),
-    or "GM14" to use the method of Green and Martin (2014).}
+    or "GM14" to use the method of Green and Martin (2017).}
 }
 \details{
   Hardin and Rocke (2005) derived an approximate \eqn{F} distribution
@@ -36,7 +36,7 @@ hr05AdjustedDF( n.obs, p.dim, mcd.alpha, m.asy, method = c("HR05", "GM14"))
   points in data set. The method of Hardin and Rocke was designed to work
   for the maximum breakdown point case of the MCD, where 
   \deqn{\alpha = \lfloor (n.obs + p.dim + 1)/2 \rfloor/n.obs.}{alpha = \lfloor (n.obs + p.dim + 1)/2 \rfloor/n.obs.}
-  Green and Martin (2014) extended 
+  Green and Martin (2017) extended 
   this result to MCD(\eqn{\alpha}), where \eqn{\alpha} controls the
   size of the sample used to compute the MCD estimate, as well as the
   breakdown point of the estimator.
@@ -47,7 +47,7 @@ hr05AdjustedDF( n.obs, p.dim, mcd.alpha, m.asy, method = c("HR05", "GM14"))
   point case; an error will be generated for other values of \code{mcd.alpha}.
 
   The argument \code{method = "GM14"} uses the extended methodology 
-  described in Green and Martin (2014) and is available for all values
+  described in Green and Martin (2017) and is available for all values
   of \code{mcd.alpha}.
 }
 \value{ Returns the adjusted F degrees of freedom based on the
@@ -92,7 +92,7 @@ hr05tester( 100,10)
 hr05tester( 500,10)
 hr05tester(1000,20)
 
-# Green and Martin (2014) improved method
+# Green and Martin (2017) improved method
 hr05tester <- function(n,p) {
 	hr05AdjustedDF( n, p, method="GM14" )
 }

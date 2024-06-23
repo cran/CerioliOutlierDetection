@@ -1,4 +1,4 @@
-7b1e77dcea359728a0161c551ce58a1d *DESCRIPTION
+2acca8ff2af27c9573417e030fe35967 *DESCRIPTION
 9b12bbcf017fca1606ddbf724bf95079 *NAMESPACE
 17c46e63c7f400037847c919e73d753e *R/cerioli10.fsrmcd.test.r
 49902706c9a9107d2856e56fc73147dd *R/cerioli10.irmcd.test.r
@@ -7,12 +7,12 @@ b3092c62ef06cdb3edba5ba9f5635c15 *R/ch99AsymptoticDF.r
 ab91593a550efc5fc8cf389a6e455c95 *R/hr05CriticalValue.r
 04531f32f46574fe85522f15560326e8 *R/hr05CutoffMvnormal.r
 3f3d596a619b07b30d5f758ddf47db2a *R/zzz.r
-5710e161e91912c61617632fcd1aa83b *README
-181b5ac5a69bd3e3e542680739e88fd5 *build/partial.rdb
-dfb37702dbaceae4aa8dfac572954cdd *man/CerioliOutlierDetection.Rd
-2e88b9400d2e7c64ea72bb1372570c6a *man/cerioli2010.fsrmcd.test.Rd
-d2d3e6b5f0fb7cd7bf5027586bbb54a5 *man/cerioli2010.irmcd.test.Rd
+6611d802ff17766fa798a30b06e4b166 *README
+cb3b20077bebc5da31fc1b46c657c0ff *build/partial.rdb
+489d6df23d2698b50e60a7fc826dd355 *man/CerioliOutlierDetection.Rd
+2c6f20b43534b2e9a057051439e3bd0a *man/cerioli2010.fsrmcd.test.Rd
+698cce4652b27de74cca851e6bae6a46 *man/cerioli2010.irmcd.test.Rd
 9fe29c0f98b15c72297201094b1c2cb1 *man/ch99AsymptoticDF.Rd
-48f0a82c5001b724fb34dba0a592d097 *man/hr05AdjustedDF.Rd
+46495c2d69ae7dcc2f7b7aa2b53e7f05 *man/hr05AdjustedDF.Rd
 fb045c008bcba1fe0cbcf75aa498f99d *man/hr05CriticalValue.Rd
-858bf7a947fdc99d018558753d535242 *man/hr05CutoffMvnormal.Rd
+76bc8b459199dce76821ef3a940ca313 *man/hr05CutoffMvnormal.Rd

@@ -4,7 +4,7 @@
 \description{
   Provides critical values for testing for outlyingness using MCD-based 
   Mahalanobis distances and the \eqn{F} distributional approximation 
-  developed by Hardin and Rocke (2005) or the enhancement by Green and Martin (2014).
+  developed by Hardin and Rocke (2005) or the enhancement by Green and Martin (2017).
 }
 \usage{ hr05CutoffMvnormal(n.obs, p.dim, mcd.alpha, signif.alpha, 
   method = c("GM14", "HR05"), use.consistency.correction = FALSE)
@@ -23,7 +23,7 @@
     null hypothesis. Default value is 0.05. 
   }
   \item{method}{Either "HR05" to use the method of Hardin and Rocke (2005),
-    or "GM14" to use the method of Green and Martin (2014).}
+    or "GM14" to use the method of Green and Martin (2017).}
   \item{use.consistency.correction}{ (Logical) By default, the method does
     not multiply the cutoff values by the consistency correction for the MCD,
     under the assumption that the correction was applied during the calculation
@@ -37,7 +37,7 @@
   derived by Hardin and Rocke (2005). One can use either the corrected degrees
   of freedom parameter derived in that paper (which was only shown to work for 
   the maximum breakdown point case of MCD), or the correction derived in 
-  Green and Martin (2014) for arbitrary values of \code{mcd.alpha}.
+  Green and Martin (2017) for arbitrary values of \code{mcd.alpha}.
 }
 \value{
   \item{ cutoff.pred }{ Critical value based on the predicted

@@ -31,7 +31,7 @@ cerioli2010.fsrmcd.test(datamat,
   in the MCD calculation.
     Default value is corresponds to the maximum breakpoint
     case of the MCD; valid values are between
-    0.5 and 1. See the \code{\link{covMcd}} documentation 
+    0.5 and 1. See the \code{\link[robustbase]{covMcd}} documentation 
     in the \code{robustbase} library for further details.
   }
   \item{signif.alpha}{ (Numeric)
@@ -47,15 +47,15 @@ cerioli2010.fsrmcd.test(datamat,
   }
   \item{nsamp}{ (Integer)
     Number of subsamples to use in computing the MCD. See the
-    \code{\link{covMcd}} documentation in the
+    \code{\link[robustbase]{covMcd}} documentation in the
     \code{robustbase} library.
   }
   \item{nmini}{ (Integer)
-    See the \code{\link{covMcd}} documentation in the
+    See the \code{\link[robustbase]{covMcd}} documentation in the
     \code{robustbase} library.
   }
   \item{trace}{ (Logical)
-    See the \code{\link{covMcd}} documentation in the
+    See the \code{\link[robustbase]{covMcd}} documentation in the
     \code{robustbase} library.
   }
   \item{delta}{ (Numeric)
@@ -70,7 +70,7 @@ cerioli2010.fsrmcd.test(datamat,
     Method to use for computing degrees of freedom
   and cutoff values for the non-MCD subset. The
   original method of Hardin and Rocke (2005) and
-  the expanded method of Green and Martin (2014)
+  the expanded method of Green and Martin (2017)
   are available as the options ``HR05'' and ``GM14'',
   respectively. ``GM14'' is the default, as it 
   is more accurate across a wider range of \code{mcd.alpha}
